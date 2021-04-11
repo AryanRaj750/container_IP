@@ -1,0 +1,3 @@
+---
+# vars file for container-IP
+inventory_path: "/roles/aryanhost.txt"

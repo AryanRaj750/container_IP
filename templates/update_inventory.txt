@@ -1,0 +1,8 @@
+[container]
+
+{% for i in IP.stdout_lines %}
+{{ i }} ansible_user=root ansible_ssh_pass=Redhat* ansible_connection=ssh
+
+{% endfor %}
+
+
