@@ -2,16 +2,12 @@
 - name: "list out all container IPs"
   shell: "docker inspect -f '{''{ .NetworkSettings.IPAddress}''}' $(docker ps -q)"
   register: IP
- 
 - name: "print all container IPs"
   debug:
-      msg: "{{IP.stdout_lines}}"
-
+      msg: "{{ IP.stdout_lines }}"
 - name: "update inventory file"
   template:
       src: "/update_inventory.txt"
-      dest: "{{inventory_path}}"
- 
+      dest: "{{ inventory_path }}"
 - name: "Refreshing inventory file"
   meta: refresh_inventory
-
